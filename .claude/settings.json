@@ -40,6 +40,9 @@
       "Bash(sudo *)"
     ]
   },
+  "skillOverrides": {
+    "sparing": "on"
+  },
   "hooks": {
     "Stop": [
       {
