@@ -10,6 +10,7 @@ Register Claude Code plugin marketpalce
 Install skills
 ```bash
 /plugin install frontend-design@claude-plugins-official
+/plugin install skill-creator@claude-plugins-official
 ```
 
 ```
