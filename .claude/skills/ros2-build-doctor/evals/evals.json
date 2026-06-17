@@ -1,0 +1,89 @@
+{
+  "skill_name": "ros2-build-doctor",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "My ROS2 Humble workspace stopped building after I split one node into a new package. `colcon build --packages-up-to navigation_bridge` now fails in `navigation_bridge` with missing headers from `geometry_msgs`, and I also noticed the package.xml and CMakeLists.txt were edited this morning. Please fix the build instead of just telling me what might be wrong.",
+      "expected_output": "The skill should inspect the package metadata and CMake wiring, identify the concrete dependency mistake, apply the narrow fix, and report root cause plus the exact build-related changes.",
+      "files": [
+        "evals/files/navigation_bridge_ws/src/navigation_bridge/package.xml",
+        "evals/files/navigation_bridge_ws/src/navigation_bridge/CMakeLists.txt",
+        "evals/files/navigation_bridge_ws/src/navigation_bridge/src/navigation_bridge_node.cpp"
+      ],
+      "expectations": [
+        "The run identifies that geometry_msgs is absent from both package.xml and CMakeLists.txt for navigation_bridge.",
+        "The run fixes both package.xml and CMakeLists.txt rather than changing unrelated source code.",
+        "The run reports the concrete root cause and the exact metadata or build-wiring changes."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Can you optimize this ROS2 workspace for faster day-to-day builds? We mostly touch two ament_cmake packages, but people keep rebuilding the whole workspace and the rebuilds feel slower than they should. If there are safe colcon or ccache improvements, make them.",
+      "expected_output": "The skill should avoid vague advice, inspect the workspace and build setup, make safe build-speed improvements where justified, and explain the reasoning behind each optimization.",
+      "files": [
+        "evals/files/build_speed_ws/README.dev.md",
+        "evals/files/build_speed_ws/src/mission_msgs/package.xml",
+        "evals/files/build_speed_ws/src/path_server/package.xml",
+        "evals/files/build_speed_ws/src/path_server/CMakeLists.txt",
+        "evals/files/build_speed_ws/src/path_server/src/path_server.cpp",
+        "evals/files/build_speed_ws/src/mission_console/package.xml"
+      ],
+      "expectations": [
+        "The run inspects the workspace files instead of giving only generic build-speed advice.",
+        "The run notices that path_server declares broader dependencies than its source and build wiring justify.",
+        "The run recommends or applies safer package-scoped or developer-build workflow improvements such as targeted colcon usage or symlink-install, with rationale."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "This ament_python package builds but the install step is broken and the console script is not showing up after `colcon build`. Please trace the packaging issue and fix it if the evidence is clear.",
+      "expected_output": "The skill should investigate Python packaging metadata, locate the install or entry-point problem, make the smallest confident fix, and summarize the remaining risks if the environment limits verification.",
+      "files": [
+        "evals/files/teleop_tools_ws/src/teleop_tools/package.xml",
+        "evals/files/teleop_tools_ws/src/teleop_tools/setup.py",
+        "evals/files/teleop_tools_ws/src/teleop_tools/setup.cfg",
+        "evals/files/teleop_tools_ws/src/teleop_tools/resource/teleop_tools",
+        "evals/files/teleop_tools_ws/src/teleop_tools/teleop_tools/__init__.py",
+        "evals/files/teleop_tools_ws/src/teleop_tools/teleop_tools/keyboard.py"
+      ],
+      "expectations": [
+        "The run inspects ament_python packaging metadata before changing code.",
+        "The run identifies that setup.cfg installs console scripts into the wrong package-specific path.",
+        "The run fixes the install-script path without broad refactors and reports the remaining verification limits if it cannot execute colcon locally."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "This ROS2 workspace was building earlier today, but after I opened a fresh shell `colcon build --packages-select nav_client` now fails during CMake with `find_package(my_robot_msgs)` not found. The package metadata should already be correct because the interfaces workspace was built separately this morning. Please diagnose it and only edit files if the evidence really points there.",
+      "expected_output": "The skill should recognize a missing distro or overlay sourcing problem, explain the safe setup fix, avoid speculative source edits, and clearly report that the blocker is environmental rather than a workspace-code bug.",
+      "files": [
+        "evals/files/overlay_workspace_notes.md",
+        "evals/files/overlay_ws/src/nav_client/package.xml",
+        "evals/files/overlay_ws/src/nav_client/CMakeLists.txt",
+        "evals/files/overlay_ws/src/nav_client/src/nav_client_node.cpp"
+      ],
+      "expectations": [
+        "The run identifies that nav_client's package metadata and CMake wiring are already consistent with a dependency provided by an overlay workspace.",
+        "The run diagnoses missing ROS2 distro or overlay sourcing as the most likely blocker.",
+        "The run avoids speculative code or metadata edits and tells the user to chain the needed setup into the same shell session or command."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "I renamed a ROS2 package from `planner_msgs` to `route_msgs`, and now `colcon build --packages-select route_msgs` fails with an install-space conflict that still mentions `planner_msgs`. Please fix the build, but do not wipe the whole workspace unless the evidence says that's really the issue.",
+      "expected_output": "The skill should identify stale build or install artifacts from the old package name, prefer a targeted clean over speculative source edits, and explain why this is a stale-artifact problem rather than a metadata bug in the renamed package.",
+      "files": [
+        "evals/files/stale_workspace_notes.md",
+        "evals/files/stale_ws/src/route_msgs/package.xml",
+        "evals/files/stale_ws/build/planner_msgs/artifact.txt",
+        "evals/files/stale_ws/install/planner_msgs/share/planner_msgs/package.xml",
+        "evals/files/stale_ws/log/latest_build/stderr.log"
+      ],
+      "expectations": [
+        "The run identifies that planner_msgs only appears in build, install, or log artifacts while src contains the renamed route_msgs package.",
+        "The run diagnoses stale build or install artifacts as the root cause.",
+        "The run avoids speculative source edits and recommends or performs a targeted clean of the stale planner_msgs artifacts instead of a blind full wipe."
+      ]
+    }
+  ]
+}

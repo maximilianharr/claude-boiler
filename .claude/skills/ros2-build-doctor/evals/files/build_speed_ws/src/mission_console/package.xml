@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>mission_console</name>
+  <version>0.5.0</version>
+  <description>Operator-facing mission console tools.</description>
+  <maintainer email="dev@example.com">Mission Team</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>mission_msgs</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

@@ -1,0 +1,6 @@
+Starting >>> route_msgs
+--- stderr: route_msgs
+colcon: error: package installation conflict detected because 'planner_msgs' is already present in the install space
+old package path: install/planner_msgs/share/planner_msgs/package.xml
+new package path: src/route_msgs/package.xml
+Aborted  <<< route_msgs [0.34s]
