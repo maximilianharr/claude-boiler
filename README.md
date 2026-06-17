@@ -15,6 +15,9 @@ Install skills
 /plugin install ponytail@ponytail
 ```
 
+```npx skills@latest add mattpocock/skills```
+
+Install mcps
 ```
 claude mcp add context7 -- npx -y @upstash/context7-mcp@latest
 ```

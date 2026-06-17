@@ -1,0 +1,1 @@
+Review this project for completeness, accuracy, improvement, security etc. Run that review by GPT5.5 and get its input into your findings to see if you're missing anything. Display your findings in a list ordered by priority. Fix every item in the list. then repeat this process until both you and GPT5.5 agree that the only remaining items have diminishing return.
