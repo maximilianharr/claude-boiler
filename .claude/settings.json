@@ -44,12 +44,56 @@
     "sparing": "on"
   },
   "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "timeout 5 python3 /home/max/ws/tmp/blink/blink_color.py 0 255 0 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "timeout 5 python3 /home/max/ws/tmp/blink/blink_color.py 255 255 0 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "timeout 5 python3 /home/max/ws/tmp/blink/blink_color.py 255 0 0 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "timeout 5 python3 /home/max/ws/tmp/blink/blink_color.py 255 255 0 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "hooks": [
           {
             "type": "command",
             "command": "paplay ./.claude/notify/bell.oga 2>/dev/null"
+          },
+          {
+            "type": "command",
+            "command": "timeout 5 python3 /home/max/ws/tmp/blink/blink_color.py 0 255 0 2>/dev/null || true"
           }
         ]
       }
@@ -60,6 +104,10 @@
           {
             "type": "command",
             "command": "paplay ./.claude/notify/bell.oga 2>/dev/null"
+          },
+          {
+            "type": "command",
+            "command": "timeout 5 python3 /home/max/ws/tmp/blink/blink_color.py --off 2>/dev/null || true"
           }
         ]
       }
@@ -70,6 +118,10 @@
           {
             "type": "command",
             "command": "paplay ./.claude/notify/bell.oga 2>/dev/null"
+          },
+          {
+            "type": "command",
+            "command": "timeout 5 python3 /home/max/ws/tmp/blink/blink_color.py 255 0 0 2>/dev/null || true"
           }
         ]
       }
