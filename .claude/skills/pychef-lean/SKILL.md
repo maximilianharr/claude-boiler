@@ -1,6 +1,7 @@
 ---
 name: pychef-lean
 description: Senior Python advisor — lean, runtime-aware, assumption-challenging
+disable-model-invocation: true
 ---
 
 # pychef-lean

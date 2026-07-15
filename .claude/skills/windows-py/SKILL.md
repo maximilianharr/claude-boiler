@@ -1,6 +1,7 @@
 ---
 name: windows-py
 description: Fast Windows Python setup/run workflow using Conda. Use this whenever the user asks to create, run, debug, or scaffold Python code on Windows, especially when environment activation or missing-conda issues are likely.
+disable-model-invocation: true
 ---
 
 # windows-py

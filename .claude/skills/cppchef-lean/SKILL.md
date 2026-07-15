@@ -1,6 +1,7 @@
 ---
 name: cppchef-lean
 description: Senior C++ advisor — lean, runtime-aware, assumption-challenging
+disable-model-invocation: true
 ---
 
 # cppchef-lean

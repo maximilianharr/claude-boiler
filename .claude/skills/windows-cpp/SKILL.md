@@ -1,6 +1,7 @@
 ---
 name: windows-cpp
 description: Fast Windows C++ create/compile/run workflow with MSVC first and MinGW g++ fallback. Use this whenever the user asks to write, build, run, or debug C++ code on Windows, especially when compiler setup or PATH issues may block progress.
+disable-model-invocation: true
 ---
 
 # windows-cpp

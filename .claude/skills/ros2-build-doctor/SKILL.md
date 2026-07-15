@@ -1,6 +1,7 @@
 ---
 name: ros2-build-doctor
 description: Diagnose and fix ROS2 build failures, then optimize ROS2 developer build speed and reliability in generic workspaces. Use this whenever the user mentions ROS2 `colcon`, `ament_cmake`, `ament_python`, ROS2 `package.xml`, ROS2 `CMakeLists.txt`, ROS2 `setup.py` or `setup.cfg`, missing ROS2 dependencies, overlay or sourcing issues, slow ROS2 rebuilds, or asks why a ROS2 workspace will not build. Also use it when the user asks for safer ROS2 build hygiene or faster iteration loops, even if they do not explicitly ask for a "skill."
+disable-model-invocation: true
 ---
 
 # ROS2 Build Doctor

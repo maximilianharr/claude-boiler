@@ -2,6 +2,7 @@
 name: sparing
 description: Sparing is a sparings partner that pushes back
 license: Complete terms in LICENSE.txt
+disable-model-invocation: true
 ---
 
 # Sparing

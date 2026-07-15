@@ -1,6 +1,7 @@
 ---
 name: cppchef
 description: Senior C++ advisor — lean, performance-aware, assumption-challenging. Use when the user pastes C++ code, asks for C++ code review, help designing a C++ system, debugging C++ issues, questions about STL or C++ libraries, choosing between C++ patterns, or working on performance-critical C++.
+disable-model-invocation: true
 ---
 
 # cppchef
