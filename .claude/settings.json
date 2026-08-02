@@ -2,7 +2,7 @@
   "model": "sonnet",
   "statusLine": {
     "type": "command",
-    "command": "bash .claude/statusline-command.sh"
+    "command": "bash $HOME/ws/claude-boiler/.claude/statusline-command.sh"
   },
   "theme": "dark",
   "enabledPlugins": {
@@ -49,7 +49,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "timeout 5 python3 ./.claude/notify/blink_color.py 0 255 0 2>/dev/null || true"
+            "command": "timeout 5 python3 $HOME/ws/claude-boiler/.claude/notify/blink_color.py 0 255 0 2>/dev/null || true"
           }
         ]
       }
@@ -59,7 +59,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "timeout 5 python3 ./.claude/notify/blink_color.py 255 255 0 2>/dev/null || true"
+            "command": "timeout 5 python3 $HOME/ws/claude-boiler/.claude/notify/blink_color.py 255 255 0 2>/dev/null || true"
           }
         ]
       }
@@ -69,7 +69,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "timeout 5 python3 ./.claude/notify/blink_color.py 255 0 0 2>/dev/null || true"
+            "command": "timeout 5 python3 $HOME/ws/claude-boiler/.claude/notify/blink_color.py 255 0 0 2>/dev/null || true"
           }
         ]
       }
@@ -79,7 +79,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "timeout 5 python3 ./.claude/notify/blink_color.py 255 255 0 2>/dev/null || true"
+            "command": "timeout 5 python3 $HOME/ws/claude-boiler/.claude/notify/blink_color.py 255 255 0 2>/dev/null || true"
           }
         ]
       }
@@ -89,11 +89,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "paplay ./.claude/notify/bell.oga 2>/dev/null"
+            "command": "paplay $HOME/ws/claude-boiler/.claude/notify/bell.oga 2>/dev/null"
           },
           {
             "type": "command",
-            "command": "timeout 5 python3 ./.claude/notify/blink_color.py 0 255 0 2>/dev/null || true"
+            "command": "timeout 5 python3 $HOME/ws/claude-boiler/.claude/notify/blink_color.py 0 255 0 2>/dev/null || true"
           }
         ]
       }
@@ -103,11 +103,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "paplay ./.claude/notify/bell.oga 2>/dev/null"
+            "command": "paplay $HOME/ws/claude-boiler/.claude/notify/bell.oga 2>/dev/null"
           },
           {
             "type": "command",
-            "command": "timeout 5 python3 ./.claude/notify/blink_color.py --off 2>/dev/null || true"
+            "command": "timeout 5 python3 $HOME/ws/claude-boiler/.claude/notify/blink_color.py --off 2>/dev/null || true"
           }
         ]
       }
@@ -117,11 +117,11 @@
         "hooks": [
           {
             "type": "command",
-            "command": "paplay ./.claude/notify/bell.oga 2>/dev/null"
+            "command": "paplay $HOME/ws/claude-boiler/.claude/notify/bell.oga 2>/dev/null"
           },
           {
             "type": "command",
-            "command": "timeout 5 python3 ./.claude/notify/blink_color.py 255 0 0 2>/dev/null || true"
+            "command": "timeout 5 python3 $HOME/ws/claude-boiler/.claude/notify/blink_color.py 255 0 0 2>/dev/null || true"
           }
         ]
       }
