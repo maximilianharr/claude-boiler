@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-# Claude Code statusLine command
+# Claude Code statusLine command.
+# Wired via "statusLine" in .claude/settings.json — Claude Code runs this automatically
+# and prints its stdout at the bottom of the terminal UI (branch, model, context, ...).
+# Not run manually; to preview output, pipe sample JSON into it by hand.
 
 input=$(cat)
 
@@ -25,7 +28,7 @@ model_short=$(echo "$model_display" \
 # 4. Context usage %
 used_pct=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
 if [ -n "$used_pct" ]; then
-    ctx_part=$(printf 'ctx:%.0f%%' "$used_pct")
+    ctx_part=$(printf 'context:%.0f%%' "$used_pct")
 else
     ctx_part="ctx:--"
 fi
