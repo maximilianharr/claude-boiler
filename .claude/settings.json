@@ -1,13 +1,4 @@
 {
-  "model": "sonnet",
-  "statusLine": {
-    "type": "command",
-    "command": "bash $HOME/ws/claude-boiler/.claude/statusline-command.sh"
-  },
-  "theme": "dark",
-  "enabledPlugins": {
-    "frontend-design@claude-plugins-official": true
-  },
   "permissions": {
     "allow": [
       "Read",
@@ -40,6 +31,7 @@
       "Bash(sudo *)"
     ]
   },
+  "model": "sonnet",
   "skillOverrides": {
     "sparing": "on"
   },
@@ -126,5 +118,18 @@
         ]
       }
     ]
-  }
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash $HOME/ws/claude-boiler/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true
+  },
+  "modelSettings": {
+    "claude-sonnet-5": {
+      "effortLevel": "high"
+    }
+  },
+  "theme": "dark"
 }
